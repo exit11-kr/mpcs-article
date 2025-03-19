@@ -9,12 +9,9 @@
     }
   ],
   "require": {
-    "cviebrock/eloquent-taggable": "^10.0",
+    "cviebrock/eloquent-taggable": "^10.0|^12.0",
     "mpcs/bootstrap5": "~0.3.0|dev-master",
-    "mpcs/core": "~0.3.0|dev-master"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^8.0"
+    "mpcs/core": "~0.3.0|dev-master|^1.0|v1.x-dev"
   },
   "autoload": {
     "psr-4": {
