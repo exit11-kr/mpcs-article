@@ -10,7 +10,7 @@
   ],
   "require": {
     "cviebrock/eloquent-taggable": "^10.0|^12.0",
-    "mpcs/bootstrap5": "~0.3.0|dev-master",
+    "mpcs/bootstrap5": "~0.3.0|dev-master|^1.0|v1.x-dev",
     "mpcs/core": "~0.3.0|dev-master|^1.0|v1.x-dev"
   },
   "autoload": {
