@@ -6,14 +6,14 @@
     <div class="col-auto">
 
         <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" name="is_visible">
+            <input class="form-check-input" type="checkbox" name="is_visible" checked>
             <label class="form-check-label"></label>
         </div>
     </div>
 </div>
 
 <div class="form-group breadcrumb-wrap">
-    <label>상위 카테고리</label>
+    <label>{{ Str::title(trans('mpcs-article::word.attr.top_category'))}}</label>
     <div class="form-control">
     </div>
 </div>

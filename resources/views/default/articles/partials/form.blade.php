@@ -19,7 +19,7 @@
 
         <div class="form-group row">
             <label class="col">
-                {{ Str::title(trans('mpcs-article::word.attr.is_header_notice')) }}
+                {{ Str::title(trans('mpcs-article::word.attr.pinned_post')) }}
             </label>
             <div class="col-auto">
                 <div class="form-check form-switch">

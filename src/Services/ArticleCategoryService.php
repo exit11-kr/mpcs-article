@@ -120,8 +120,8 @@ class ArticleCategoryService
     {
         if ($this->repository->saveOrder()) {
             return [
-                'title' => "순서 저장 성공",
-                'message' => "메뉴 순서가 저장되었습니다.",
+                'title' => trans('mpcs-article::word.message.saveOrder'),
+                'message' => trans('mpcs-article::word.message.menuOrderSaved'),
                 'status' => 200,
             ];
         }

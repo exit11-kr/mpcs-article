@@ -1,7 +1,7 @@
 <div id="asideNavCategory" class="aside-category panel-wrap mb-2">
     <div class="panel-heading d-flex align-items-start justify-content-between">
         <h4 class="h4">
-            카테고리
+            {{ Str::title(trans('mpcs-article::word.attr.categories')) }}
         </h4>
         <button class="btn btn-search-expend" type="button" data-bs-toggle="collapse"
             data-bs-target="#articleCategoriesWrap">

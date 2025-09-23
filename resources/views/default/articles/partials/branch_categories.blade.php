@@ -19,7 +19,7 @@
             <span class="badge bg-dark">{{ $branch->id }}</span>
             <span data-name="name" class="setting-name breadcrumb-wrap">{{ $branch->name }}</span>
             @if ($isVisibleBranch->count() == 0)
-                <small class="text-muted">({{ $branch->articles->count() }})</small>
+                <small class="{{ $branch->id == $currentCategory->id ? 'text-white' : 'text-muted' }}">({{ $branch->articles->count() }})</small>
             @endif
         </div>
         <div class="col-auto">

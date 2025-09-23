@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'article_categories' => 'Article categories',
-    'articles' => 'Articles',
+    'article_categories' => 'Board Category',
+    'articles' => 'Board',
 ];

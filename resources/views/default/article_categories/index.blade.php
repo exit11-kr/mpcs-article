@@ -17,12 +17,13 @@
 
 {{-- 헤더 버튼 그룹 --}}
 @section('crud_button_group')
-    <button id="btnSaveNestedOrder" type="button" class="btn btn-danger">
-        <i class="mdi mdi-content-save-all mr-2"></i>
+    <button id="btnSaveNestedOrder" type="button" class="ui-btn outline">
+        <!-- <i class="mdi mdi-content-save-all mr-2"></i> -->
         <span class="d-none d-sm-inline"> {{ trans('ui-bootstrap5::word.button.save_order') }} </span>
     </button>
-    <button class="btn-crud-create btn btn-primary font-weight-bold"><i class="mdi mdi-plus-circle-outline mr-1"></i>
-        {{ Str::ucfirst(trans('ui-bootstrap5::word.create')) }}
+    <button class="btn-crud-create btn btn-primary font-weight-bold">
+        <!-- <i class="mdi mdi-plus-circle-outline mr-1"></i> -->
+        {{ Str::ucfirst(trans('mpcs-article::word.button.create', ['name' => 'New'])) }}
     </button>
 @endsection
 
@@ -54,7 +55,9 @@
 @push('after_app_scripts')
     <script>
         window.CRUD.sortable(undefined, {
-            chidrenOffsetElement: 'li'
+            chidrenOffsetElement: 'li',
+            hasListPath : true,
         });
     </script>
 @endpush
+        
