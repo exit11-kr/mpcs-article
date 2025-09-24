@@ -10,10 +10,10 @@
 </div>
 <div class="row mt-1">
     <div class="col">
-        <a href="{{ url()->current() }}" class="ui-btn ghost default w-100">{{ trans('ui-bootstrap5::word.initialization') }}</a>
+        <a href="{{ url()->current() }}" class="btn btn-secondary d-block">{{ trans('ui-bootstrap5::word.initialization') }}</a>
     </div>
     <div class="col">
-        <button type="button" class="ui-btn filled default w-100 btn-crud-search">{{ trans('ui-bootstrap5::word.search') }}</button>
+        <button type="button" class="btn btn-primary d-block w-100 btn-crud-search">{{ trans('ui-bootstrap5::word.search') }}</button>
     </div>
 </div>
 {!! Form::close() !!}

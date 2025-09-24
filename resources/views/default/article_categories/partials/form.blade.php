@@ -6,7 +6,7 @@
     <div class="col-auto">
 
         <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" name="is_visible" checked>
+            <input class="form-check-input" type="checkbox" name="is_visible">
             <label class="form-check-label"></label>
         </div>
     </div>

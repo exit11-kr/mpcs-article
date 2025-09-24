@@ -35,18 +35,9 @@ return [
         'writer'                    => '글쓴이',
         'push_title'                => '새글 알림',
         'top_category'              => '상위 카테고리',
-        'pinned_post'               => '머릿글',
     ],
     'choose_a_file'         => '파일선택',
     'is_target_title'       => '링크주소 새창 열림 여부',
     'target_self'           => '현재창',
     'target_blank'          => '새창',
-    'message' => [
-        'saveOrder'    => '순서 저장 성공',
-        'menuOrderSaved' => '메뉴 순서가 저장되었습니다.',
-    ],
-        'button' => [
-        'new' => '생성',
-        'create' => '생성'
-    ]
 ];

@@ -66,7 +66,7 @@
                                     @endforelse
                                 </p>
                             @endif
-                            <p class="mb-0 text-md-center">
+                            <p class="mb-0">
                                 <span> {{ $data->title }} </span> <small
                                     class="d-md-none">({{ $data->view_count }})</small>
                                 @if ($data->summary)
@@ -101,13 +101,13 @@
                 </td>
                 <td class="crud-td-actions text-end text-md-center">
                     @can('view', $data)
-                        <button class="btn-crud-show ui-btn small outline icon-only"
+                        <button class="btn-crud-show btn btn-sm btn-icon btn-success text-white align-middle"
                             title="{{ trans('ui-bootstrap5::word.button.show') }}">
                             <i class="mdi mdi-eye"></i>
                         </button>
                     @endcan
                     @can('delete', $data)
-                        <button class="btn-crud-delete ui-btn small outline icon-only"
+                        <button class="btn-crud-delete btn btn-sm btn-icon btn-danger text-white align-middle"
                             title="{{ trans('ui-bootstrap5::word.button.delete') }}">
                             <i class="mdi mdi-trash-can"></i>
                         </button>

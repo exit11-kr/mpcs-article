@@ -39,10 +39,10 @@
                     @endif
                 </div>
                 <div class="col-auto">
-                    <button type="button" class="btn-crud-edit ui-btn small outline icon-only py-0 px-1 align-middle">
+                    <button class="btn-crud-edit btn btn-success text-white py-0 px-1 align-middle">
                         <i class="mdi mdi-pencil"></i>
                     </button>
-                    <button type="button" class="btn-child-create btn btn-primary text-white py-0 px-1 align-middle">
+                    <button class="btn-child-create btn btn-primary text-white py-0 px-1 align-middle">
                         <i class="mdi mdi-timeline-plus"></i>
                     </button>
                 </div>

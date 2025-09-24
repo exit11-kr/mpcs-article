@@ -31,8 +31,8 @@
 @section('crud_button_group')
     @can('create', Mpcs\Article\Models\Article::class)
         <button class="btn-crud-create btn btn-primary font-weight-bold">
-            <!-- <i class="mdi mdi-plus-thick mr-1"></i> -->
-            {{ Str::title(trans('mpcs-article::word.button.new', ['name' => 'Article'])) }}
+            <i class="mdi mdi-plus-thick mr-1"></i>
+            {{ Str::title(trans('ui-bootstrap5::word.create')) }}
         </button>
     @endcan
 @endsection
@@ -110,7 +110,6 @@
             initListParams: {
                 'article_category_id': '{{ $currentCategory->id }}',
             },
-            hasListPath:true,
         });
     </script>
 @endpush

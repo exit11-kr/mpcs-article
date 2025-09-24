@@ -10,7 +10,7 @@ return [
         'created_at'        => "Created at",
         'deleted_at'        => "Deleted at",
         'image'             => 'Image',
-        'is_header_notice'  => "Pinned",
+        'is_header_notice'  => "Header",
         'is_thumbnail_size_message' => "Do you want to use the specified thumbnail size?",
         'list_type'         => 'List type',
         'nonrelease'        => "Nonrelease",
@@ -34,19 +34,10 @@ return [
         'view_count'        => 'View count',
         'writer'            => 'Writer',
         'push_title'        => 'New article',
-        'top_category'        => 'Top Category',
-        'pinned_post'   => 'Pinned Post',
+        'top_category'      => 'Top Category',
     ],
     'choose_a_file'         => 'Choose a file',
     'is_target_title'       => 'Link address, new window is open.',
     'target_self'           => 'Self',
     'target_blank'          => 'Blank',
-    'message' => [
-        'saveOrder'    => 'Order saved successfully',
-        'menuOrderSaved' => 'The menu order has been saved.',
-    ],
-    'button' => [
-        'new' => 'New :Name',
-        'create' => 'Create :Name'
-    ]
 ];

@@ -37,7 +37,7 @@
             @forelse ($isVisibleBranch as $branch)
                 @include(Article::theme('articles.partials.branch_categories'), [
                     'branch' => $branch,
-                    'currentCategoryId' => $currentCategory->id,
+                    'currentCategoryId' => $currentCategory->id,   
                 ])
             @empty
             @endforelse
