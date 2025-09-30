@@ -20,7 +20,7 @@ class ArticleCategory extends Model
     public $timestamps = false;
     protected $guarded = ['id'];
     // $sortable 정의시 정렬기능을 제공할 필드는 필수 기입
-    public $sortable = ['id', 'name', 'is_visible'];
+    public $sortable = ['id', 'name', 'is_visible', 'order'];
     public $defaultSortable = [
         'order' => 'asc',
     ];
