@@ -128,7 +128,7 @@ class ArticleInstallSeeder extends Seeder
                     'description' => 'Notice',
                     'type'        => 2,
                     'is_visible'  => 1,
-                    'depth'       => 2,
+                    'depth'       => 1,
                     'deleted_at'  => null,
                 ],
                 [
@@ -139,7 +139,7 @@ class ArticleInstallSeeder extends Seeder
                     'description' => 'Faq',
                     'type'        => 2,
                     'is_visible'  => 1,
-                    'depth'       => 2,
+                    'depth'       => 1,
                     'deleted_at'  => null,
                 ],
                 [
@@ -150,11 +150,11 @@ class ArticleInstallSeeder extends Seeder
                     'description' => 'QA',
                     'type'        => 2,
                     'is_visible'  => 1,
-                    'depth'       => 2,
+                    'depth'       => 1,
                     'deleted_at'  => null,
                 ]
             ];
-        // website
+            // website
         } else {
             $categories = [
                 [
