@@ -87,11 +87,7 @@
             trans('mpcs-article::word.attr.summary'),
         ) !!}
         {{-- 에디터 --}}
-        <div data-type="editor" style="height: calc(100vh - 320px)">
-            <div class="editor-wrap" data-crud-edit-type="editor"
-                data-crud-edit-name="{{ config('mpcsui.editor_is_mode_wysiwyg') ? 'html' : 'markdown' }}"></div>
-            <input type="hidden" data-get-lang="markdown" name="markdown">
-            <input type="hidden" data-get-lang="html" name="html">
-        </div>
+        <div data-type="editor" style="height: calc(100vh - 500px)" data-crud-edit-type="editor"
+            data-input-name-markdown="markdown" data-input-name-html="html" data-crud-edit-name="markdown"></div>
     </div>
 </div>
