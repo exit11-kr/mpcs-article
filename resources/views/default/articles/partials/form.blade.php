@@ -88,6 +88,6 @@
         ) !!}
         {{-- 에디터 --}}
         <div data-type="editor" style="height: calc(100vh - 500px)" data-crud-edit-type="editor"
-            data-input-name-markdown="markdown" data-input-name-html="html" data-crud-edit-name="markdown"></div>
+            data-input-name-markdown="markdown" data-input-name-html="html" data-crud-edit-name="html"></div>
     </div>
 </div>
