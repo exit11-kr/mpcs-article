@@ -11,6 +11,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Mpcs\Bootstrap5\Traits\ResponsiveImageTrait;
 use Illuminate\Support\Str;
+use Mpcs\Core\Facades\Core;
 
 class Article extends Model
 {
@@ -202,12 +203,23 @@ class Article extends Model
      */
     public function scopeCustom($query, $params)
     {
+        $user = Core::user();
+        $isReleased = false;
+
         if (isset($params['__released'])) {
             $released = $params['__released'];
             if ($released === "true") {
-                $now = Carbon::now()->format('Y-m-d H:i:s');
-                $query->where('released_at', '<=', $now);
+                $isReleased = true;
             }
+        }
+
+        // 게시판 수정/관리 권한 없을 시 릴리즈된 글만 조회
+        if (!($user && ($user->isAdministrator() || ($user->cans(['article.edit', 'article.manage']) === true)))) {
+            $isReleased = true;
+        }
+
+        if ($isReleased) {
+            $query->released(); 
         }
     }
 }
