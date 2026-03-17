@@ -31,7 +31,8 @@ class ArticleController extends Controller
     public function index(Request $request)
     {
         // 모델 조회시 옵션설정(페이징여부, 검색조건)
-        $this->addOption('_per_page', Facade::getPerPage());
+        $perPage = $request->input('_per_page', Facade::getPerPage());
+        $this->addOption('_per_page', $perPage);
         return new ResourceCollection($this->service->index());
     }
 
