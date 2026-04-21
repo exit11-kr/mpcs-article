@@ -9,6 +9,7 @@ use Mpcs\Article\Models\Article as Model;
 use Mpcs\Article\Models\ArticleFile;
 use Illuminate\Support\Facades\DB;
 use Mpcs\Core\Traits\RepositoryTrait;
+use Illuminate\Support\Carbon;
 
 class ArticleRepository implements ArticleRepositoryInterface
 {
@@ -35,7 +36,24 @@ class ArticleRepository implements ArticleRepositoryInterface
     // Get all instances of model
     public function all()
     {
-        $model = $this->model::search()->orderBy('is_header_notice', 'desc')->sortable();
+        $sort = request('sort');
+        $direction = request('direction', 'asc') === 'asc' ? 'asc' : 'desc';
+        $model = $this->model::search();
+
+        if ($sort === 'status_released') {
+            $now = Carbon::now()->format('Y-m-d H:i:s');
+            $model = $model
+                ->orderBy('is_header_notice', 'desc')
+                ->orderByRaw("
+                CASE
+                    WHEN released_at IS NOT NULL AND released_at <= ? THEN 1
+                    ELSE 0
+                END {$direction}
+            ", [$now]);
+        } else {
+            $model = $model->orderBy('is_header_notice', 'desc')->sortable();
+        }
+
         return $model->with($this->model::getDefaultLoadRelations())->paging()->onEachSide(2);
     }
 
