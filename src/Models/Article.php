@@ -28,7 +28,7 @@ class Article extends Model
         ]
     ];
     // $sortable 정의시 정렬기능을 제공할 필드는 필수 기입
-    public $sortable = ['id', 'title', 'view_count', 'released_at'];
+    public $sortable = ['id', 'title', 'view_count', 'released_at', 'user_id'];
 
     protected $casts = [
         'created_at' => 'datetime:Y-m-d H:i',
@@ -219,7 +219,19 @@ class Article extends Model
         }
 
         if ($isReleased) {
-            $query->released(); 
+            $query->released();
+        }
+
+        if (request('sort') === 'status_released') {
+            $direction = request('direction', 'asc') === 'asc' ? 'asc' : 'desc';
+            $now = Carbon::now()->format('Y-m-d H:i:s');
+
+            $query->orderBy('is_header_notice', 'desc')->orderByRaw("
+            CASE
+                WHEN released_at IS NOT NULL AND released_at <= ? THEN 1
+                ELSE 0
+            END {$direction}
+        ", [$now]);
         }
     }
 }
