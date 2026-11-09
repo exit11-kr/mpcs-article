@@ -66,7 +66,7 @@ class ArticleRepository implements ArticleRepositoryInterface
             $this->model->title = $this->request['title'];
             $this->model->summary = $this->request['summary'] ?? null;
             $this->model->markdown = $this->request['markdown'] ?? null;
-            $this->model->html = $this->request['html'] ?? null;
+            $this->model->html = $this->sanitizeHtml($this->request['html'] ?? null);
             $this->model->is_header_notice = $this->request['is_header_notice'] ?? 0;
             $this->model->released_at = $this->request['released_at'];
             $this->model->user_id = Core::user()->id;
@@ -145,7 +145,7 @@ class ArticleRepository implements ArticleRepositoryInterface
             $model->title = $this->request['title'];
             $model->summary = $this->request['summary'] ?? $model->summary;
             $model->markdown = $this->request['markdown'] ?? $model->content;
-            $model->html = $this->request['html'] ?? $model->html;
+            $model->html = $this->sanitizeHtml($this->request['html'] ?? $model->html);
             $model->is_header_notice = $this->request['is_header_notice'] ?? 0;
             $model->released_at = $this->request['released_at'];
             $model->user_id = Core::user()->id;
@@ -200,5 +200,15 @@ class ArticleRepository implements ArticleRepositoryInterface
     public function delete($model)
     {
         return $model->delete();
+    }
+
+    // 정화 처리가 있는 앱에서만 본문 정화(패키지를 함께 쓰는 다른 앱은 기존 동작 유지)
+    private function sanitizeHtml($html)
+    {
+        if ($html === null || !class_exists('App\Support\HtmlSanitizer')) {
+            return $html;
+        }
+
+        return \App\Support\HtmlSanitizer::article($html);
     }
 }
